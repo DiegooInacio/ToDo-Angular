@@ -1,0 +1,62 @@
+.left-side {
+  position: relative;
+  width: 4.9375rem;
+  height: 57.4375rem;
+  background-color: var(--primary-color);
+  .menu {
+    padding: 20px;
+    margin-left: 4px;
+    cursor: pointer;
+  }
+  .navigation {
+    padding: 8px;
+    margin-left: 5px;
+    margin-top: -10px;
+    .tarefas {
+      margin-left: 9px;
+      cursor: pointer;
+      transition: transform 0.3s ease, filter 0.3s ease,
+        background-color 0.3s ease;
+    }
+    .tarefas:hover {
+      animation: btn-hover 0.3s forwards, trocaDeCor 0.3s forwards;
+    }
+    .listas {
+      cursor: pointer;
+    }
+  }
+  .footer {
+    width: 79px;
+    height: 60px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: 0;
+    img {
+      padding: 20px;
+      margin-left: 3px;
+      cursor: pointer;
+    }
+  }
+}
+
+@keyframes btn-hover {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes trocaDeCor {
+  from {
+    filter: brightness(0) saturate(100%) invert(95%) sepia(8%) saturate(76%)
+      hue-rotate(169deg) brightness(100%) contrast(92%);
+    background-color: transparent;
+  }
+  to {
+    filter: brightness(0) saturate(100%) invert(17%) sepia(0%) saturate(0%)
+      hue-rotate(65deg) brightness(90%) contrast(86%);
+    background-color: #fff;
+  }
+}
