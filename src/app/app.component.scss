@@ -1,62 +1,52 @@
+@import "../app/shared/scss/mixins";
+
 .left-side {
   position: relative;
   width: 4.9375rem;
   height: 57.4375rem;
   background-color: var(--primary-color);
-  .menu {
-    padding: 20px;
-    margin-left: 4px;
-    cursor: pointer;
-  }
-  .navigation {
-    padding: 8px;
-    margin-left: 5px;
-    margin-top: -10px;
-    .tarefas {
-      margin-left: 9px;
-      cursor: pointer;
-      transition: transform 0.3s ease, filter 0.3s ease,
-        background-color 0.3s ease;
-    }
-    .tarefas:hover {
-      animation: btn-hover 0.3s forwards, trocaDeCor 0.3s forwards;
-    }
-    .listas {
-      cursor: pointer;
-    }
-  }
-  .footer {
-    width: 79px;
-    height: 60px;
-    background-color: var(--secondary-color);
+  .nav-side {
     position: absolute;
-    bottom: 0;
-    img {
-      padding: 20px;
-      margin-left: 3px;
-      cursor: pointer;
+    top: 20px;
+    left: 20px;
+  }
+  .item {
+    margin: 0 auto;
+    width: 35px;
+    padding: 6px;
+    border-radius: 5px;
+    @include centerFlex;
+    margin-bottom: 10px;
+    cursor: pointer;
+    .tarefas {
+      margin-left: -2px;
+    }
+    .menu {
+      margin-left: -1px;
+    }
+    &:hover {
+      animation: trocaDeCor 0.3s forwards;
+      img {
+        filter: brightness(0) saturate(100%) invert(12%) sepia(6%)
+          saturate(7428%) hue-rotate(200deg) brightness(100%) contrast(89%);
+      }
     }
   }
 }
+.footer.item {
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+}
 
-@keyframes btn-hover {
-  from {
-    transform: scale(1);
-  }
+@keyframes trocaDeCor {
   to {
+    background-color: var(--background);
     transform: scale(1.1);
   }
 }
 
-@keyframes trocaDeCor {
-  from {
-    filter: brightness(0) saturate(100%) invert(95%) sepia(8%) saturate(76%)
-      hue-rotate(169deg) brightness(100%) contrast(92%);
-    background-color: transparent;
-  }
-  to {
-    filter: brightness(0) saturate(100%) invert(17%) sepia(0%) saturate(0%)
-      hue-rotate(65deg) brightness(90%) contrast(86%);
-    background-color: #fff;
-  }
+.container {
+  display: flex;
 }

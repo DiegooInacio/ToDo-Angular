@@ -1,18 +1,26 @@
-<div class="left-side">
-  <div class="menu">
-    <img src="../assets/Header.svg" alt="" />
-  </div>
-
-  <div class="navigation">
-    <img src="../assets/ic_round-inbox (1).svg" alt="" class="tarefas" />
-    <img src="../assets/Listas.svg" alt="" class="listas" />
-  </div>
-
-  <div class="footer">
-    <img src="../assets/logout-icon.svg" alt="" />
-  </div>
-</div>
-
 <div class="container">
-  <router-outlet></router-outlet>
+  <div class="left-side">
+    <div class="nav-side">
+      <div class="menu item">
+        <img src="../assets/Header.svg" alt="" class="menu" />
+      </div>
+
+      <div class="navigation">
+        <div class="item" routerLink="tarefas">
+          <img src="../assets/ic_round-inbox (1).svg" alt="" class="tarefas" />
+        </div>
+        <div class="item" [routerLink]="['/listas']">
+          <img src="../assets/Lista.svg" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="footer item">
+      <img src="../assets/logout-icon.svg" alt="" />
+    </div>
+  </div>
+
+  <div class="right-side">
+    <router-outlet></router-outlet>
+  </div>
 </div>
