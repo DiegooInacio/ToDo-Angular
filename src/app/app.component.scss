@@ -5,6 +5,27 @@
   width: 4.9375rem;
   height: 57.4375rem;
   background-color: var(--primary-color);
+  transition: all 0.5s ease;
+  &.active {
+    width: 15.625rem;
+    transition: all 0.5s ease;
+    .item {
+      width: 12rem;
+      align-content: center;
+      span {
+        color: var(--background);
+      }
+      justify-content: start;
+      gap: 7px;
+    }
+    .menu {
+      justify-content: space-between;
+      align-items: center;
+      .funcionalidade {
+        height: 1.875rem;
+      }
+    }
+  }
   .nav-side {
     position: absolute;
     top: 20px;
@@ -30,6 +51,9 @@
         filter: brightness(0) saturate(100%) invert(12%) sepia(6%)
           saturate(7428%) hue-rotate(200deg) brightness(100%) contrast(89%);
       }
+      span {
+        color: var(--primary-color);
+      }
     }
   }
 }
@@ -49,4 +73,8 @@
 
 .container {
   display: flex;
+}
+
+.right-side {
+  padding: 10px;
 }

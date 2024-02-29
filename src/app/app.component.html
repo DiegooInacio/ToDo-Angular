@@ -1,16 +1,31 @@
 <div class="container">
-  <div class="left-side">
+  <div class="left-side" [class.active]="mostrarMenu">
     <div class="nav-side">
-      <div class="menu item">
+      <div class="menu item" (click)="ativarMenu()">
+        <div class="funcionalidade">
+          @if (mostrarMenu) {
+          <img src="../assets/Logo.svg" alt="" />
+          }
+        </div>
         <img src="../assets/Header.svg" alt="" class="menu" />
       </div>
 
       <div class="navigation">
         <div class="item" routerLink="tarefas">
           <img src="../assets/ic_round-inbox (1).svg" alt="" class="tarefas" />
+          <div class="funcionalidade">
+            @if (mostrarMenu) {
+            <span>Tarefas</span>
+            }
+          </div>
         </div>
         <div class="item" [routerLink]="['/listas']">
           <img src="../assets/Lista.svg" alt="" />
+          <div class="funcionalidade">
+            @if (mostrarMenu) {
+            <span>Listas</span>
+            }
+          </div>
         </div>
       </div>
     </div>
