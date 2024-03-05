@@ -11,15 +11,20 @@
       </div>
 
       <div class="navigation">
-        <div class="item" routerLink="tarefas">
-          <img src="../assets/ic_round-inbox (1).svg" alt="" class="tarefas" />
+        <div class="item tarefas" routerLink="tarefas" [style]="iniciarAberto">
+          <img
+            src="../assets/ic_round-inbox (1).svg"
+            alt=""
+            class="tarefas"
+            [style]="iconeAberto"
+          />
           <div class="funcionalidade">
             @if (mostrarMenu) {
-            <span>Tarefas</span>
+            <span [style]="paragrafoAberto">Tarefas</span>
             }
           </div>
         </div>
-        <div class="item" [routerLink]="['/listas']">
+        <div class="item listas" [routerLink]="['/listas']">
           <img src="../assets/Lista.svg" alt="" />
           <div class="funcionalidade">
             @if (mostrarMenu) {
@@ -31,11 +36,20 @@
     </div>
 
     <div class="footer item">
+      <div class="usuario">
+        @if (mostrarMenu) {
+        <img src="../assets/user-icon.svg" alt="" />
+        <div>
+          <span>Diego Inácio</span>
+          <p>Usuário</p>
+        </div>
+        }
+      </div>
       <img src="../assets/logout-icon.svg" alt="" />
     </div>
   </div>
 
-  <div class="right-side">
+  <div class="right-side" [class.active]="mostrarMenu">
     <router-outlet></router-outlet>
   </div>
 </div>

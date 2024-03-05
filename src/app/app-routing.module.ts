@@ -6,7 +6,7 @@ import { ListasComponent } from './listas/listas.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'tarefas',
+    component: TarefasComponent,
     pathMatch: 'full',
   },
   {

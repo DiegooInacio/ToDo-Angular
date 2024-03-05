@@ -7,22 +7,46 @@
   background-color: var(--primary-color);
   transition: all 0.5s ease;
   &.active {
-    width: 15.625rem;
-    transition: all 0.5s ease;
+    width: 17rem;
+    transition: all 0.2s ease;
     .item {
-      width: 12rem;
       align-content: center;
-      span {
+      animation: itemOpen 0.5s forwards;
+      span,
+      p {
         color: var(--background);
       }
+      p {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+      }
       justify-content: start;
-      gap: 7px;
+    }
+    .tarefas {
+      gap: 4px;
+    }
+    .listas {
+      gap: 9px;
     }
     .menu {
       justify-content: space-between;
       align-items: center;
       .funcionalidade {
         height: 1.875rem;
+      }
+    }
+    .footer {
+      height: 3.75rem;
+      display: flex;
+      justify-content: space-between;
+      .usuario {
+        display: flex;
+        gap: 10px;
+      }
+      img {
+        display: block;
+        justify-content: end;
       }
     }
   }
@@ -33,7 +57,6 @@
   }
   .item {
     margin: 0 auto;
-    width: 35px;
     padding: 6px;
     border-radius: 5px;
     @include centerFlex;
@@ -45,13 +68,9 @@
     .menu {
       margin-left: -1px;
     }
-    &:hover {
-      animation: trocaDeCor 0.3s forwards;
-      img {
-        filter: brightness(0) saturate(100%) invert(12%) sepia(6%)
-          saturate(7428%) hue-rotate(200deg) brightness(100%) contrast(89%);
-      }
-      span {
+    &:hover.hover {
+      span,
+      p {
         color: var(--primary-color);
       }
     }
@@ -64,17 +83,24 @@
   left: 20px;
 }
 
-@keyframes trocaDeCor {
-  to {
-    background-color: var(--background);
-    transform: scale(1.1);
-  }
-}
-
 .container {
   display: flex;
 }
 
 .right-side {
-  padding: 10px;
+  width: 96%;
+  padding: 25px;
+  background-color: var(--background);
+  &.active {
+    width: 96%;
+  }
+}
+
+@keyframes itemOpen {
+  from {
+    width: 2.1875rem;
+  }
+  to {
+    width: 12.9375rem;
+  }
 }
