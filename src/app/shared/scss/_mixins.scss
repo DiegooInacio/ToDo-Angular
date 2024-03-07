@@ -3,3 +3,21 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin emAtraso {
+  h3 {
+    color: var(--danger);
+  }
+}
+
+@mixin ultimoDia {
+  h3 {
+    color: var(--warning);
+  }
+}
+
+@mixin paraFazer {
+  h3 {
+    color: var(--positive);
+  }
+}

@@ -53,7 +53,12 @@
   .filtros {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
+  }
+  .divider {
+    width: 100%;
+    border: 1px solid rgb(242, 238, 238);
   }
   p {
     font-family: "Karla", sans-serif;
@@ -62,7 +67,84 @@
     line-height: 1.1687rem;
   }
   img {
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
+  }
+}
+
+.tasks {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.card {
+  width: 250px;
+  height: 112px;
+  background-color: #fff;
+  box-shadow: 0 7px 10px -8px rgba(0, 0, 0, 0.8);
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 9px;
+  gap: 10px;
+  .divider {
+    width: 100%;
+    border: 1px solid rgb(242, 238, 238);
+    margin-top: 2px;
+  }
+  @include emAtraso;
+  h3 {
+    font-family: "Karla", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.1687rem;
+  }
+  h4 {
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.1687rem;
+    margin-bottom: 1px;
+  }
+  p {
+    font-family: "Karla";
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #33333380;
+  }
+  span {
+    font-family: Karla;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 11px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #6c5a5a;
+  }
+  .headerCard {
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  .mainCard {
+    width: 212px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+  }
+  .infoCardEmAtraso {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 8px;
+    .tarefas,
+    .data {
+      display: flex;
+      align-items: center;
+      margin-right: 5px;
+      gap: 2px;
+    }
   }
 }
