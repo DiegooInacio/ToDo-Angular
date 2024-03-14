@@ -14,12 +14,38 @@
 </div>
 
 <div class="main">
-  <div class="filtros-background">
+  <div class="filtros-background" [class.active]="mostrarFiltro">
     <div class="filtros">
       <p>Filtros</p>
-      <img src="../../assets/arrowDown.svg" alt="" />
+      <img src="../../assets/arrowDown.svg" alt="" (click)="ativarFiltro()" />
     </div>
     <div class="divider"></div>
+    <div class="filtros-info">
+      @if (mostrarFiltro) {
+      <div class="lista-filtro classeFiltro">
+        <span>Lista</span>
+        <div class="button">
+          <span>Selecione aqui</span>
+          <img src="../../assets/btn-select1.svg" alt="" />
+        </div>
+      </div>
+      <div class="data-filtro classeFiltro">
+        <span>Data de conclusão</span>
+        <div class="button">
+          <span>Selecione aqui</span>
+          <img src="../../assets/btn-select1.svg" alt="" />
+        </div>
+      </div>
+      <div class="ordenar-filtro classeFiltro">
+        <span>Ordenar por</span>
+        <div class="button">
+          <span>Selecione aqui</span>
+          <img src="../../assets/btn-select1.svg" alt="" />
+        </div>
+      </div>
+
+      }
+    </div>
   </div>
 
   <div class="tasks">
@@ -28,7 +54,6 @@
         <h3>Em Atraso</h3>
         <div class="divider"></div>
       </div>
-
       <div class="mainCard">
         <div class="tituloTask">
           <h4>Título da Task</h4>
@@ -174,5 +199,58 @@
         </div>
       </div>
     </div>
+    <div class="card">
+      <div class="headerCard">
+        <h3>Em Atraso</h3>
+        <div class="divider"></div>
+      </div>
+      <div class="mainCard">
+        <div class="tituloTask">
+          <h4>Título da Task</h4>
+          <p>Descrição da task</p>
+        </div>
+        <div class="threeDots">
+          <img src="../../assets/threeDots.svg" alt="" />
+        </div>
+      </div>
+      <div class="infoCardEmAtraso">
+        <div class="tarefas">
+          <img src="../../assets/dotlist.svg" alt="" />
+          <span>Tarefas</span>
+        </div>
+        <div class="data">
+          <img src="../../assets/timer.svg" alt="" />
+          <span>4 de Fevereiro, 17:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="headerCard">
+        <h3>Em Atraso</h3>
+        <div class="divider"></div>
+      </div>
+      <div class="mainCard">
+        <div class="tituloTask">
+          <h4>Título da Task</h4>
+          <p>Descrição da task</p>
+        </div>
+        <div class="threeDots">
+          <img src="../../assets/threeDots.svg" alt="" />
+        </div>
+      </div>
+      <div class="infoCardEmAtraso">
+        <div class="tarefas">
+          <img src="../../assets/dotlist.svg" alt="" />
+          <span>Tarefas</span>
+        </div>
+        <div class="data">
+          <img src="../../assets/timer.svg" alt="" />
+          <span>4 de Fevereiro, 17:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="carregarMais">
+    <button class="carregar">Carregar mais</button>
   </div>
 </div>
