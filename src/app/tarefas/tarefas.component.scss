@@ -101,19 +101,21 @@
 }
 
 .tasks {
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 14px;
+  position: relative;
+  // display: flex;
+  // flex-wrap: wrap;
   .card {
-    width: 230px;
-    height: 112px;
+    // width: 230px;
+    // height: 112px;
     background-color: #fff;
     box-shadow: 0 7px 10px -8px rgba(0, 0, 0, 0.8);
     margin-top: 20px;
     border-radius: 10px;
-    padding: 9px;
+    padding: 12px;
+
     .divider {
       width: 100%;
       border: 1px solid rgb(242, 238, 238);
@@ -165,6 +167,43 @@
       align-items: center;
       margin-left: 10px;
       margin-top: 7px;
+      .boxOptionCard {
+        width: 7.75rem;
+        height: 7.125rem;
+        background-color: #fff;
+        position: absolute;
+        top: 34%;
+        span {
+          font-family: "Karla", sans-serif;
+          font-weight: 400;
+          font-size: 0.9375rem;
+          line-height: 1.5rem;
+        }
+        img {
+          width: 0.75rem;
+          height: 0.75rem;
+        }
+        .excluir {
+          display: flex;
+          align-items: center;
+          width: 7.75rem;
+          height: 2.375rem;
+          padding: 7px 13px 7px 13px;
+          gap: 7px;
+          background-color: #ccc;
+          cursor: pointer;
+        }
+        .concluir,
+        .editar {
+          display: flex;
+          align-items: center;
+          width: 7.75rem;
+          height: 2.375rem;
+          padding: 7px 13px 7px 13px;
+          gap: 7px;
+          cursor: pointer;
+        }
+      }
       .tarefas,
       .data {
         display: flex;

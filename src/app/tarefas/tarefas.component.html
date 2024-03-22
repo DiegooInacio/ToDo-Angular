@@ -59,7 +59,7 @@
           <h4>Título da Task</h4>
           <p>Descrição da task</p>
         </div>
-        <div class="threeDots">
+        <div class="threeDots" (click)="toggleOptionsCard()">
           <img src="../../assets/threeDots.svg" alt="" />
         </div>
       </div>
@@ -71,6 +71,67 @@
         <div class="data">
           <img src="../../assets/timer.svg" alt="" />
           <span>4 de Fevereiro, 17:00</span>
+        </div>
+        <div class="optionsCard">
+          @if (optionsCard) {
+          <div class="boxOptionCard">
+            <div class="concluir">
+              <img src="../../assets/concluir.svg" alt="" />
+              <span>Concluir</span>
+            </div>
+            <div class="editar">
+              <img src="../../assets/editar.svg" alt="" />
+              <span>Editar</span>
+            </div>
+            <div class="excluir">
+              <img src="../../assets/remover.svg" alt="" />
+              <span>Remover</span>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="headerCard">
+        <h3>Em Atraso</h3>
+        <div class="divider"></div>
+      </div>
+      <div class="mainCard">
+        <div class="tituloTask">
+          <h4>Título da Task</h4>
+          <p>Descrição da task</p>
+        </div>
+        <div class="threeDots" (click)="toggleOptionsCard()">
+          <img src="../../assets/threeDots.svg" alt="" />
+        </div>
+      </div>
+      <div class="infoCardEmAtraso">
+        <div class="tarefas">
+          <img src="../../assets/dotlist.svg" alt="" />
+          <span>Tarefas</span>
+        </div>
+        <div class="data">
+          <img src="../../assets/timer.svg" alt="" />
+          <span>4 de Fevereiro, 17:00</span>
+        </div>
+        <div class="optionsCard">
+          @if (optionsCard) {
+          <div class="boxOptionCard">
+            <div class="concluir">
+              <img src="../../assets/concluir.svg" alt="" />
+              <span>Concluir</span>
+            </div>
+            <div class="editar">
+              <img src="../../assets/editar.svg" alt="" />
+              <span>Editar</span>
+            </div>
+            <div class="excluir">
+              <img src="../../assets/remover.svg" alt="" />
+              <span>Remover</span>
+            </div>
+          </div>
+          }
         </div>
       </div>
     </div>

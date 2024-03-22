@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-tarefas',
@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './tarefas.component.scss',
 })
 export class TarefasComponent {
-  mostrarFiltro: boolean = true;
+  mostrarFiltro: boolean = false;
+
+  optionsCard: boolean = true;
 
   ativarFiltro() {
     if (this.mostrarFiltro == true) {
@@ -15,4 +17,18 @@ export class TarefasComponent {
       this.mostrarFiltro = true;
     }
   }
+
+  toggleOptionsCard() {
+    this.optionsCard = !this.optionsCard;
+  }
 }
+
+// @HostListener('document:click', ['$event'])
+// clickout(event: any) {
+//   if (
+//     !event.target.closest('.threeDots') &&
+//     !event.target.closest('.boxOptionsCard')
+//   ) {
+//     this.optionsCard = false;
+//   }
+// }
