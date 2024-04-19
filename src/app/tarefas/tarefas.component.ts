@@ -1,4 +1,5 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
+import { DataTarefasService, Tarefas } from '../services/data-tarefas.service';
 
 @Component({
   selector: 'app-tarefas',
@@ -6,9 +7,15 @@ import { Component, HostListener } from '@angular/core';
   styleUrl: './tarefas.component.scss',
 })
 export class TarefasComponent {
+  private dataTarefas = inject(DataTarefasService);
+
+  @Input() tarefas?: Tarefas;
+
   mostrarFiltro: boolean = false;
 
   optionsCard: boolean = true;
+
+  nome = 'card';
 
   ativarFiltro() {
     if (this.mostrarFiltro == true) {
@@ -21,14 +28,8 @@ export class TarefasComponent {
   toggleOptionsCard() {
     this.optionsCard = !this.optionsCard;
   }
-}
 
-// @HostListener('document:click', ['$event'])
-// clickout(event: any) {
-//   if (
-//     !event.target.closest('.threeDots') &&
-//     !event.target.closest('.boxOptionsCard')
-//   ) {
-//     this.optionsCard = false;
-//   }
-// }
+  getTarefas(): Tarefas[] {
+    return this.dataTarefas.getTarefas();
+  }
+}
